@@ -1,0 +1,33 @@
+---
+import Layout from './Layout.astro';
+
+const { frontmatter } = Astro.props;
+---
+
+<Layout>
+  <article class="prose prose-lg max-w-4xl mx-auto px-4 py-8">
+    <h1>{frontmatter.title}</h1>
+    {frontmatter.date && (
+      <time datetime={frontmatter.date}>
+        {new Date(frontmatter.date).toLocaleDateString()}
+      </time>
+    )}
+    <slot />
+  </article>
+</Layout>
+
+<style>
+  article {
+    line-height: 1.6;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  time {
+    color: #666;
+    font-size: 0.9rem;
+  }
+</style>

@@ -1,0 +1,17 @@
+---
+import Layout from '../layouts/Layout.astro';
+import MarkdownEditor from '../components/MarkdownEditor';
+---
+
+<Layout>
+  <main class="max-w-4xl mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold mb-6">Markdown to HTML Converter</h1>
+    <MarkdownEditor client:load />
+  </main>
+</Layout>
+
+<style>
+  main {
+    min-height: 100vh;
+  }
+</style>
